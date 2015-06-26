@@ -34,7 +34,7 @@ public extension NSUserDefaults {
             self.key = key
         }
         
-        // MARK: Getters
+        // MARK: Getters - Optional
         
         public var object: NSObject? {
             return defaults.objectForKey(key) as? NSObject
@@ -75,6 +75,45 @@ public extension NSUserDefaults {
         public var bool: Bool? {
             return number?.boolValue
         }
+        
+        
+        // MARK: Getters - None optional
+        
+        public var stringValue: String {
+            return string ?? ""
+        }
+        
+        public var arrayValue: NSArray {
+            return array ?? NSArray()
+        }
+        
+        public var dictionaryValue: NSDictionary {
+            return dictionary ?? NSDictionary()
+        }
+        
+        public var dataValue: NSData {
+            return data ?? NSData()
+        }
+        
+        public var dateValue: NSDate {
+            return date ?? NSDate()
+        }
+        
+        public var numberValue: NSNumber {
+            return number ?? 0
+        }
+        
+        public var intValue: Int {
+            return int ?? 0
+        }
+        
+        public var doubleValue: Double {
+            return double ?? 0
+        }
+        
+        public var boolValue: Bool {
+            return bool ?? false
+        }
     }
     
     /// Returns getter proxy for `key`
@@ -87,7 +126,7 @@ public extension NSUserDefaults {
     
     public subscript(key: String) -> Any? {
         get {
-            return self[key]
+            return objectForKey(key)
         }
         set {
             if let v = newValue as? Int {
