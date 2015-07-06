@@ -131,10 +131,14 @@ public extension NSUserDefaults {
         set {
             if let v = newValue as? Int {
                 setInteger(v, forKey: key)
+            } else if let v = newValue as? Float {
+                setFloat(v, forKey: key)
             } else if let v = newValue as? Double {
                 setDouble(v, forKey: key)
             } else if let v = newValue as? Bool {
                 setBool(v, forKey: key)
+            } else if let v = newValue as? NSURL {
+                setURL(v, forKey: key)
             } else if let v = newValue as? NSObject {
                 setObject(v, forKey: key)
             } else if newValue == nil {
