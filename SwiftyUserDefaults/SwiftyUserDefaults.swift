@@ -40,6 +40,10 @@ public extension NSUserDefaults {
             return defaults.objectForKey(key) as? NSObject
         }
         
+        public var URL: NSURL? {
+            return defaults.URLForKey(key)
+        }
+        
         public var string: String? {
             return defaults.stringForKey(key)
         }
