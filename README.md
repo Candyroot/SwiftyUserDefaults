@@ -1,5 +1,7 @@
 # SwiftyUserDefaults
 
+**Note: What you see below is the old stringly-typed API. If you're using Swift 2, check out the [next](https://github.com/radex/SwiftyUserDefaults/tree/next) branch to see what's coming soon.**
+
 SwiftyUserDefaults is a set of extensions to make the `NSUserDefaults` API cleaner, nicer, and at home with Swift's syntax.
 
 Read [Swifty APIs: NSUserDefaults](http://radex.io/swift/nsuserdefaults/) for more information about this project.
@@ -20,6 +22,20 @@ Defaults["anything"].number         // returns NSNumber?
 ```
 
 SwiftyUserDefaults always returns `nil` for non-existing values, also for numbers and booleans.
+
+### Default values
+
+When you don't want to deal with the `nil` case, you can use these helpers that return a default value for non-existing defaults:
+
+```swift
+Defaults["color"].stringValue            // defaults to ""
+Defaults["launchCount"].intValue         // defaults to 0
+Defaults["chimeVolume"].doubleValue      // defaults to 0.0
+Defaults["loggingEnabled"].boolValue     // defaults to false
+Defaults["lastPaths"].arrayValue         // defaults to []
+Defaults["credentials"].dictionaryValue  // defaults to [:]
+Defaults["hotkey"].dataValue             // defaults to NSData()
+```
 
 ### Setting data
 

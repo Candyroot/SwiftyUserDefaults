@@ -80,6 +80,45 @@ public extension NSUserDefaults {
             return number?.boolValue
         }
         
+<<<<<<< HEAD
+        
+        // MARK: Getters - None optional
+        
+        public var stringValue: String {
+            return string ?? ""
+        }
+        
+        public var arrayValue: NSArray {
+            return array ?? NSArray()
+        }
+        
+        public var dictionaryValue: NSDictionary {
+            return dictionary ?? NSDictionary()
+        }
+        
+        public var dataValue: NSData {
+            return data ?? NSData()
+        }
+        
+        public var dateValue: NSDate {
+            return date ?? NSDate()
+        }
+        
+        public var numberValue: NSNumber {
+            return number ?? 0
+        }
+        
+        public var intValue: Int {
+            return int ?? 0
+        }
+        
+        public var doubleValue: Double {
+            return double ?? 0
+        }
+        
+        public var boolValue: Bool {
+            return bool ?? false
+=======
         // MARK: Non-Optional Getters
         
         public var stringValue: String {
@@ -112,6 +151,7 @@ public extension NSUserDefaults {
         
         public var boolValue: Bool {
             return number?.boolValue ?? false
+>>>>>>> 6fd0511074440f591f61be88a5b0daf4094c339b
         }
     }
     
